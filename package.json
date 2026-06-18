@@ -1,0 +1,22 @@
+{
+  "name": "darknightdesigner-skills",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Agent skills for Andres Gonzalez",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darknightdesigner/skills"
+  },
+  "license": "MIT",
+  "scripts": {
+    "changeset": "changeset",
+    "list": "bash scripts/list-skills.sh",
+    "link": "bash scripts/link-skills.sh",
+    "version": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.30.0"
+  },
+  "packageManager": "npm@10.9.4"
+}
