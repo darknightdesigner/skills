@@ -5,6 +5,7 @@ Minimal agent skills repo.
 ## Structure
 
 - `skills/engineering/` - code and repo workflows
+- `skills/framer/` - Framer workflows
 - `skills/productivity/` - general workflow tools
 - `skills/misc/` - useful but rarely used tools
 - `skills/personal/` - local or personal workflows
