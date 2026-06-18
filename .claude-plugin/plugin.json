@@ -1,4 +1,6 @@
 {
   "name": "darknightdesigner-skills",
-  "skills": []
+  "skills": [
+    "./skills/framer/convert-prompt"
+  ]
 }

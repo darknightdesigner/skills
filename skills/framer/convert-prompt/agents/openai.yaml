@@ -1,0 +1,4 @@
+interface:
+  display_name: "Convert Prompt"
+  short_description: "Rewrite code prompts for native Framer"
+  default_prompt: "When the user says \"convert prompt\" or provides a code-oriented prompt to adapt for Framer, use $convert-prompt before answering. Fully perform the translation into native Framer instructions yourself; do not ask the downstream Framer agent to translate Tailwind, React, CSS, or stack-specific syntax. Preserve the original design intent exactly and avoid visual improvements or best-practice embellishments. For strict replica or pixel-match prompts, include preflight instructions to verify exact fonts and attached/trusted assets before building."

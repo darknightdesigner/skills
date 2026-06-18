@@ -1,0 +1,10 @@
+---
+description: Route code-to-Framer prompt conversions to the canonical convert-prompt skill.
+alwaysApply: false
+---
+
+When the user says "convert prompt" or asks to convert, rewrite, adapt, or translate a code-oriented prompt for Framer, load and follow the canonical skill:
+
+`/Users/andresgonzalez/Github/Projects/skills/skills/framer/convert-prompt/SKILL.md`
+
+Return the converted Framer prompt directly. Do not ask the downstream Framer agent to translate React, Tailwind, CSS, HTML, framework structure, or implementation details that can be converted into Framer-native requirements.
