@@ -1,6 +1,6 @@
-# Example: Conditional React/Tailwind Video Hero Mappings
+# React/Tailwind to Framer Conversion Reference
 
-Apply a row only when the source prompt contains the matching source detail. Do not infer missing layers, effects, sections, copy, motion, or styling from this example.
+Use this reference when converting code-oriented React or Tailwind prompts into concrete Framer instructions. It covers anti-pattern phrasing, utility-to-Framer mappings, layout and viewport geometry, media layers, and motion behavior. Apply a row only when the source prompt contains the matching source detail; do not infer missing layers, effects, sections, copy, motion, or styling from this reference.
 
 ## Anti-Patterns To Avoid
 
@@ -9,7 +9,7 @@ Apply a row only when the source prompt contains the matching source detail. Do 
 | "Build this directly in Framer." | Omit it when the user already asked for a Framer conversion. Start with the concrete section/page to create. |
 | "Use native Framer layout/styling wherever possible." | Replace with specific converted structure: vertical 100vh stack, nav at top, fill-height hero body, footer at bottom, full-bleed video behind content. |
 | "Translate Tailwind-style sizing/spacing into equivalent Framer styles." | Perform the translation: 24px horizontal padding, 48px bottom padding, max width about 1024px, max content width about 576px, 16px gap, white at 80% opacity. |
-| "If custom code is needed, use a Code Component for the background video fade behavior and CSS glass effects." | Attach code notes only to exact behaviors: the 500ms requestAnimationFrame video fade loop likely needs a code component or override; the glass border may need a code-based mask if native layered frames cannot reproduce it exactly. |
+| "If custom code is needed, use a Code Component for the background video fade behavior and CSS glass effects." | Attach code notes only to exact behaviors: the 500ms requestAnimationFrame video fade loop likely needs a code component; the glass border may need a code-based mask if native layered frames cannot reproduce it exactly. |
 
 ## Reliable Class And Instruction Conversions
 
@@ -55,4 +55,4 @@ Apply a row only when the source prompt contains the matching source detail. Do 
 | `motion.div` opacity `0 -> 1`, scale `0.95 -> 1`, duration `1.5`, ease `[0.16, 1, 0.3, 1]` | Headline appear animation with opacity and scale, 1.5s duration, custom/equivalent easing. | Preserve duration and easing values. If Framer cannot enter exact cubic easing, say "close to". |
 | `motion.div` opacity `0 -> 1`, y `20 -> 0`, duration `1.2`, delay `0.3`, same ease | Subheadline appear animation with opacity and vertical offset, 1.2s duration, 0.3s delay, custom/equivalent easing. | Preserve delay and offset. |
 | Blinking cursor opacity `0 -> 1 -> 0`, duration `0.8`, repeat infinite, linear | Blinking cursor animation with 0.8s linear loop. | This is likely expressible as a looped animation, but keep exactness contingent on Framer support. |
-| Type at 100ms, delete at 50ms, pause 2000ms, cycle messages | Code component or code override for exact behavior; native approximation may use looping variants/text states. | Treat exact typewriter logic as code-only unless Framer native tooling is known to support it. |
+| Type at 100ms, delete at 50ms, pause 2000ms, cycle messages | Code component for exact behavior; native approximation may use looping variants/text states. | Treat exact typewriter logic as code-only unless Framer native tooling is known to support it. |

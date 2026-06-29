@@ -1,5 +1,7 @@
 # Skills
 
+[![skills.sh](https://skills.sh/b/darknightdesigner/skills)](https://skills.sh/darknightdesigner/skills)
+
 Minimal agent skills repo.
 
 Agent-facing repo instructions live in `AGENTS.md`. Tool-specific files should stay thin and point back to that source of truth.
@@ -19,6 +21,12 @@ Create `skills/<bucket>/<skill-name>/SKILL.md`, then add stable skills to `.clau
 User-invoked skills set `disable-model-invocation: true`. Model-invoked skills omit it and use trigger-focused descriptions.
 
 ## Install Locally
+
+Install the stable skill set through the Skills CLI:
+
+```bash
+npx skills add darknightdesigner/skills --skill convert-prompt
+```
 
 Run `npm run link` to symlink stable skills into:
 

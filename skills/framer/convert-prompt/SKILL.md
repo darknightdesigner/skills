@@ -24,6 +24,7 @@ The downstream Framer agent may not have access to the current repository, local
 - Treat the source prompt as a closed-world design spec. Do not add visual layers, effects, copy, interactions, accessibility/readability treatments, layout wrappers, decorative elements, or responsive behaviors unless they are explicit in the source, mechanically derived from source syntax, or required as a stated Framer approximation.
 - Treat absence as meaningful. If the source defines a layer model and does not include an overlay, tint, gradient, blur, shadow, scrim, decoration, or extra surface, do not add one.
 - Be honest about gaps. If Framer cannot match a behavior exactly with native features, state the closest native default and mark the code path as optional.
+- Respect current Framer agent boundaries. Do not present direct code-override assignment to canvas nodes, site/project settings, analytics access, A/B testing, rewrites, custom headers, static files, well-known files, or routed page deletion/renaming/moving as agent-executable work; translate them into supported alternatives or a clear limitation.
 - For strict recreation, replica, or pixel-match prompts, require a short Framer preflight when exactness depends on proprietary/custom fonts, uploaded assets, or external media. Tell the Framer agent to verify required fonts and attached/trusted assets before building and to pause with blockers if exact resources are missing, unless the user/source explicitly asks to keep momentum with placeholders or fallbacks.
 - Keep the result copy-paste-ready for a Framer agent with no surrounding explanation required.
 
@@ -48,9 +49,9 @@ Priority order:
 
 ## Calibration Reference
 
-For class-heavy React/Tailwind landing-page prompts, especially those with fixed navs, video heroes, responsive typography, hover effects, absolute overlay alignment, or exact typewriter/cursor logic, read [examples/react-tailwind-video-hero.md](examples/react-tailwind-video-hero.md) before converting. It provides conditional source-to-Framer mappings, not a reusable output template.
+For class-heavy React/Tailwind prompts, especially those with fixed navs, responsive typography, hover effects, absolute overlay alignment, viewport-relative layout, media layers, or exact motion logic, read [examples/react-tailwind-to-framer-conversion-reference.md](examples/react-tailwind-to-framer-conversion-reference.md) before converting. It provides conditional source-to-Framer mappings, not a reusable output template.
 
-Do not load the example for simple prompts or unrelated patterns. Keep progressive disclosure: use the reference when it will clarify conversion details or reduce the risk of overpromising Framer-native behavior. The example is not an output template.
+Do not load the reference for simple prompts or unrelated patterns. Keep progressive disclosure: use it when it will clarify conversion details or reduce the risk of overpromising Framer-native behavior. The reference is not an output template.
 
 ## Conversion Workflow
 
@@ -58,15 +59,15 @@ Do not load the example for simple prompts or unrelated patterns. Keep progressi
 2. Create a source layout trace before writing the Framer prompt. Capture parent/child hierarchy, normal-flow versus absolute/fixed layers, viewport constraints, stack/grid direction, fill/hug/fixed sizing, sibling distribution, alignment, gaps, padding, transforms, z-order, pointer behavior, media crop/focal positioning, and any derived viewport anchors.
 3. Convert the trace into a rendered intent brief. Keep it internal unless the downstream prompt needs the details, but use it to preserve geometry such as visual centers, top offsets, bottom anchors, focal crops, and sibling relationships.
 4. Build an internal provenance ledger before writing the final prompt. Classify each intended instruction as `source-explicit`, `source-derived`, `Framer-mechanical`, `approximation/caveat`, or `unbacked addition`. Remove every `unbacked addition`.
-5. If the source prompt matches the calibration reference pattern, load the example and use its mappings conservatively.
+5. If the source prompt matches the calibration reference pattern, load the reference and use its mappings conservatively.
 6. Remove build-stack mechanics such as package installs, framework setup, HTML head tags, CSS reset files, Tailwind config, Vite/Next details, imports, hooks, and DOM implementation details.
-7. Identify Framer execution blockers before writing the final prompt: arbitrary third-party CDN images, proprietary fonts, external web-font imports, large asset manifests, strict custom ARIA, and subpixel/fractional precision. For strict recreation or pixel-match sources, add a concise preflight requirement that verifies fonts and attached/trusted assets first and pauses on missing exact resources. For lower-fidelity sources, allow placeholders or fallbacks only when source/user intent permits them and require the Framer agent to report them.
+7. Identify Framer execution blockers before writing the final prompt: arbitrary third-party CDN images, proprietary fonts, external web-font imports, large asset manifests, strict custom ARIA, subpixel/fractional precision, unsupported hosting/project settings, analytics access, A/B testing, direct code-override assignment, and routed page deletion/renaming/moving. For strict recreation or pixel-match sources, add a concise preflight requirement that verifies fonts and attached/trusted assets first and pauses on missing exact resources. For lower-fidelity sources, allow placeholders or fallbacks only when source/user intent permits them and require the Framer agent to report them.
 8. Restate each remaining requirement in Framer-native terms using the translation guide below, preserving the source prompt's headings, order, and grouping when they are clear.
 9. Replace framework syntax with converted values and Framer-native descriptions before writing the final prompt. The final prompt should not delegate conversion work with phrases like "translate Tailwind styles" or "convert the React layout."
 10. Preserve specifics: exact copy, intentional line breaks, colors, sizes, spacing relationships, breakpoints, durations, delays, easing, stagger values, assets, media focal positions, transforms, z-order, and negative constraints.
 11. Preserve derived geometry. When source layout math implies a visible anchor, include the target anchor in Framer terms, such as "content visual center around 35% of viewport height" or "footer remains in normal flow at the bottom."
 12. Express responsiveness as Desktop, Tablet, and Phone breakpoint behavior instead of CSS media queries or Tailwind prefixes. Use 1200, 810, and 390 widths as defaults when the source prompt does not specify breakpoints.
-13. Flag code-only behavior only where needed. Give the native approximation as the default and make the code component or code override path opt-in unless the user explicitly asked for code. Prefer an inline caveat near the affected requirement; add a short caveat section only if inline wording would obscure the prompt.
+13. Flag code-only behavior only where needed. Give the native approximation as the default and make the code component path opt-in unless the user explicitly asked for code. Do not tell the downstream agent to assign a code override directly to an existing node. Prefer an inline caveat near the affected requirement; add a short caveat section only if inline wording would obscure the prompt.
 14. Before returning, perform the downstream prompt boundary check:
    - No local paths, local file names, repo names, or private reference titles.
    - No instructions to read this repository or any local docs.
@@ -109,6 +110,7 @@ Use the brief as the source of truth for the Framer prompt. If the final prompt 
 
 - HTML entry files, font links, head tags, imports, CSS resets, global CSS, Tailwind config, bundler notes, TypeScript notes, Vite, Next.js, or React setup -> remove them.
 - Page title, metadata, description, and social image requests -> Framer page metadata.
+- Site/project settings, analytics dashboards, A/B tests, rewrites, custom headers, static files, and well-known files -> unsupported by the current agent tools; state the limitation or convert to a supported page/content alternative only if that preserves the user's intent.
 - Global design tokens from code -> Framer color tokens, text style presets, link styles, and reusable component styles when reused.
 
 ### Layout And Responsive Structure
@@ -167,12 +169,13 @@ Use the brief as the source of truth for the Framer prompt. If the final prompt 
 - Small fixed visual groups such as three process steps or bespoke stat cards -> native repeated frames are acceptable when they are structural, not managed records.
 - Detail/template pages -> CMS detail page with variable-bound fields and stable slugs.
 - Forms -> native form frame, labeled inputs with correct types, and a submit button component instance. Mention integrations only if the source prompt asks for them.
+- Localization or translation updates -> inspect available locales and localized fields before applying changes, preserve existing localized values unless replacement is explicit, and ask before bulk deletion, replacement, or destructive localization migration.
 - Runtime validation or submission logic beyond native form behavior -> code escalation note.
 
 ### Components, Media, Icons, And Reuse
 
 - Reusable buttons, cards, badges, nav items, FAQ items, or repeated UI -> reuse existing Framer components first; otherwise create native canvas components with variants and editable properties.
-- Existing styled elements needing runtime behavior -> prefer a code override over rebuilding as a code component.
+- Existing styled elements needing runtime behavior -> use native interactions, variants, and event handlers first; when code is required, specify a code component workflow when supported. Do not promise direct code-override assignment to an existing node.
 - Icons -> Framer-native icon sets or available project icon components. Do not use Unicode symbols as icon substitutes unless requested.
 - Arbitrary third-party CDN image URLs -> do not assume they can be applied in Framer. For strict replica or pixel-match prompts, require attached/uploaded image files, an attached asset pack with explicit ordering, or assets from a trusted built-in image-search result before building.
 - Large image manifests -> include the mapping needed to place each asset, but prefer "use the attached file matching this filename/layer name" over URL assembly. Full URL tables can help ordering, but they do not make an untrusted external origin usable.
@@ -181,7 +184,7 @@ Use the brief as the source of truth for the Framer prompt. If the final prompt 
 
 ## Code Escalation
 
-Escalate to a code component or code override only when the behavior cannot be represented as native canvas structure, CMS data, variants, overlays, effects, controls, and event handlers.
+Escalate to a code component only when the behavior cannot be represented as native canvas structure, CMS data, localized content, variants, overlays, effects, controls, and event handlers. Do not direct the downstream agent to assign code overrides to existing nodes; external-agent override assignment is unsupported.
 
 Code is usually justified for:
 
@@ -210,7 +213,7 @@ Before returning, read the converted prompt once and fix any issue found by this
 - Confirm percent transforms name the reference element and do not become vague placement language.
 - Confirm normal-flow header/body/footer relationships are preserved when they affect content placement.
 - Confirm responsiveness is expressed as Desktop, Tablet, and Phone behavior instead of CSS media queries or Tailwind prefixes.
-- Confirm native Framer implementation is the default, and any code-only behavior is isolated to an optional code component or code override note unless the user explicitly requested exact code behavior.
+- Confirm native Framer implementation is the default, and any code-only behavior is isolated to an optional code component note unless the user explicitly requested exact code behavior.
 - Confirm every Tailwind utility, CSS selector/class, React prop, hook, import, package, or build-stack note from the source was either converted into concrete Framer-native requirements or removed as irrelevant setup. Do not leave source syntax for the Framer agent to interpret unless it is exact CSS needed for a stated code-only effect.
 - Compare the source prompt's headings and major bullet groups to the output. Any added, removed, or renamed section must be justified by source ambiguity, user instructions, or an unavoidable Framer caveat.
 - Confirm no calibration-example sectioning, caveat heading, or prose style leaked into the final output.
@@ -222,7 +225,7 @@ Before returning, read the converted prompt once and fix any issue found by this
 
 Return one rewritten prompt, not a before/after comparison. Keep the source prompt's design intent, priority, and structure as much as possible after removing framework mechanics.
 
-Use a specific title that helps the Framer agent understand the desired output, such as `# Build the Quiet Video Hero Landing Page` or `# Create the Pricing Page With Interactive FAQ`. Do not use generic titles such as `# Prompt (Framer version)`.
+Use a specific title that helps the Framer agent understand the desired output, such as `# Build the Product Launch Landing Page` or `# Create the Pricing Page With Interactive FAQ`. Do not use generic titles such as `# Prompt (Framer version)`.
 
 Omit implied setup instructions. Start with the concrete thing to create or edit, then list the converted requirements. Do not tell the Framer agent that the prompt is for Framer, that it should use Framer, or that it should translate source-stack syntax into Framer.
 
