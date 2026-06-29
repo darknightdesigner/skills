@@ -11,11 +11,9 @@ Stable skill buckets:
 - `engineering/`
 - `framer/`
 - `productivity/`
-- `misc/`
 
 Non-stable buckets:
 
-- `personal/`
 - `in-progress/`
 - `deprecated/`
 

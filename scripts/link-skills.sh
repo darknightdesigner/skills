@@ -33,7 +33,6 @@ link_into_dest() {
     -not -path '*/node_modules/*' \
     -not -path '*/deprecated/*' \
     -not -path '*/in-progress/*' \
-    -not -path '*/personal/*' \
     -print0 |
   while IFS= read -r -d '' skill_md; do
     local src name target
