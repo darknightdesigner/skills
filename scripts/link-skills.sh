@@ -2,53 +2,61 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
-DESTS=("$HOME/.claude/skills" "$HOME/.agents/skills")
+CANONICAL_ROOT="$HOME/.agents/skills"
+HOST_ROOTS=("$HOME/.codex/skills" "$HOME/.claude/skills" "$HOME/.cursor/skills")
 
 if [ "$#" -gt 0 ]; then
-  DESTS=("$@")
+  HOST_ROOTS=("$@")
 fi
 
-resolve_path() {
-  realpath "$1" 2>/dev/null || python3 -c 'import os, sys; print(os.path.realpath(sys.argv[1]))' "$1"
-}
+install_skill() {
+  local source_skill="$1"
+  local skill_name
+  local canonical_skill
 
-link_into_dest() {
-  local dest="$1"
+  skill_name="$(basename "$source_skill")"
+  canonical_skill="$CANONICAL_ROOT/$skill_name"
 
-  if [ -L "$dest" ]; then
-    local resolved
-    resolved="$(resolve_path "$dest")"
-    case "$resolved" in
-      "$REPO"|"$REPO"/*)
-        echo "error: $dest is a symlink into this repo ($resolved)." >&2
-        echo "Remove it and re-run; this script will recreate it as a real directory." >&2
-        exit 1
-        ;;
-    esac
+  mkdir -p "$CANONICAL_ROOT"
+
+  if [ -L "$canonical_skill" ]; then
+    echo "error: canonical skill must be a directory, not a symlink: $canonical_skill" >&2
+    exit 1
+  elif [ ! -e "$canonical_skill" ]; then
+    cp -R "$source_skill" "$canonical_skill"
+    echo "installed $skill_name -> $canonical_skill"
+  else
+    echo "canonical $skill_name already exists at $canonical_skill"
   fi
 
-  mkdir -p "$dest"
+  for host_root in "${HOST_ROOTS[@]}"; do
+    local host_skill="$host_root/$skill_name"
+    mkdir -p "$host_root"
 
+    if [ -L "$host_skill" ]; then
+      local link_target
+      link_target="$(readlink "$host_skill")"
+      if [ "$link_target" = "$canonical_skill" ]; then
+        echo "linked $host_skill -> $canonical_skill"
+        continue
+      fi
+      rm "$host_skill"
+    elif [ -e "$host_skill" ]; then
+      echo "error: refusing to replace non-symlink host skill: $host_skill" >&2
+      exit 1
+    fi
+
+    ln -s "$canonical_skill" "$host_skill"
+    echo "linked $host_skill -> $canonical_skill"
+  done
+}
+
+while IFS= read -r -d '' skill_md; do
+  install_skill "$(dirname "$skill_md")"
+done < <(
   find "$REPO/skills" -name SKILL.md \
     -not -path '*/node_modules/*' \
     -not -path '*/deprecated/*' \
     -not -path '*/in-progress/*' \
-    -print0 |
-  while IFS= read -r -d '' skill_md; do
-    local src name target
-    src="$(dirname "$skill_md")"
-    name="$(basename "$src")"
-    target="$dest/$name"
-
-    if [ -e "$target" ] && [ ! -L "$target" ]; then
-      rm -rf "$target"
-    fi
-
-    ln -sfn "$src" "$target"
-    echo "linked $name -> $src"
-  done
-}
-
-for dest in "${DESTS[@]}"; do
-  link_into_dest "$dest"
-done
+    -print0
+)

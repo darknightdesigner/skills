@@ -1,6 +1,7 @@
 {
   "name": "darknightdesigner-skills",
   "skills": [
-    "./skills/framer/convert-prompt"
+    "./skills/framer/convert-prompt",
+    "./skills/framer/sync-styles"
   ]
 }

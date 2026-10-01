@@ -30,7 +30,7 @@ Keep reusable skill bodies in `skills/**/SKILL.md`. Do not maintain duplicate fu
 ## Distribution
 
 - Claude plugin metadata lives in `.claude-plugin/plugin.json`.
-- Local Claude and Codex/OpenAI installs are handled by `scripts/link-skills.sh`.
+- Local installs are handled by `scripts/link-skills.sh`: canonical user copies live under `~/.agents/skills`, and host-specific directories link back to them.
 - Cursor adapters live in `adapters/cursor/` and should be copied or symlinked into a target repo's `.cursor/rules/` directory.
 
-Run `npm run list` to list canonical skills. Run `npm run link` to link stable skills into the default local Claude and Codex/OpenAI skill directories.
+Run `npm run list` to list repository skills. Run `npm run link` to seed stable skills into the canonical local `~/.agents/skills` directory and link the default host directories back to it.

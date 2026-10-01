@@ -28,12 +28,13 @@ Install the stable skill set through the Skills CLI:
 npx skills add darknightdesigner/skills --skill convert-prompt
 ```
 
-Run `npm run link` to symlink stable skills into:
+Run `npm run link` to install missing stable skills into the canonical local directory:
 
-- `~/.claude/skills`
 - `~/.agents/skills`
 
-Pass explicit destination directories to `scripts/link-skills.sh` to override the defaults.
+The script then links the corresponding entries in `~/.codex/skills`, `~/.claude/skills`, and `~/.cursor/skills` back to the canonical `~/.agents/skills` directories. Existing canonical directories are never overwritten implicitly.
+
+Pass explicit host destination directories to `scripts/link-skills.sh` to override the default host link locations.
 
 Cursor adapters live in `adapters/cursor/` and should be copied or symlinked into a target repo's `.cursor/rules/` directory.
 
@@ -42,3 +43,4 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 ### Framer
 
 - **[convert-prompt](./skills/framer/convert-prompt/SKILL.md)** - Convert code-oriented prompts into copy-paste-ready native Framer prompts.
+- **[sync-styles](./skills/framer/sync-styles/SKILL.md)** - Sync a codebase's named colors, text styles, and used icons into Framer.
