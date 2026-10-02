@@ -28,6 +28,13 @@ Install the stable skill set through the Skills CLI:
 npx skills add darknightdesigner/skills --skill convert-prompt
 ```
 
+Or install the stable set as a Claude Code plugin:
+
+```bash
+claude plugin marketplace add darknightdesigner/skills
+claude plugin install darknightdesigner-skills@darknightdesigner
+```
+
 Run `npm run link` to install missing stable skills into the canonical local directory:
 
 - `~/.agents/skills`
@@ -44,3 +51,4 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 
 - **[convert-prompt](./skills/framer/convert-prompt/SKILL.md)** - Convert code-oriented prompts into copy-paste-ready native Framer prompts.
 - **[sync-styles](./skills/framer/sync-styles/SKILL.md)** - Sync a codebase's named colors, text styles, and used icons into Framer.
+- **[create-mock](./skills/framer/create-mock/SKILL.md)** - Update an existing Framer dashboard mock to match a view in the local app.

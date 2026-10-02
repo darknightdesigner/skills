@@ -29,7 +29,8 @@ Keep reusable skill bodies in `skills/**/SKILL.md`. Do not maintain duplicate fu
 
 ## Distribution
 
-- Claude plugin metadata lives in `.claude-plugin/plugin.json`.
+- Claude plugin metadata lives in `.claude-plugin/plugin.json`. `.claude-plugin/marketplace.json` makes the repo its own single-plugin marketplace. Run `claude plugin validate . --strict` after touching either manifest.
+- Don't edit `version` in `plugin.json` by hand. `npm run version` (run by the release workflow) applies changesets, then `scripts/sync-plugin-version.mjs` copies the `package.json` version into `plugin.json`. `npm run check-plugin-version` reports drift.
 - Local installs are handled by `scripts/link-skills.sh`: canonical user copies live under `~/.agents/skills`, and host-specific directories link back to them.
 - Cursor adapters live in `adapters/cursor/` and should be copied or symlinked into a target repo's `.cursor/rules/` directory.
 

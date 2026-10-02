@@ -13,8 +13,6 @@ Recreate the source codebase's reusable design assets as closely as Framer suppo
 - Connect to the intended Framer project using the official `framer` skill and its current setup instructions. Read the refreshed project context and inspect existing color styles, text styles, fonts, and icon sets.
 - Resolve unclear source or destination identity before writing.
 
-
-
 ## Match the existing project
 
 - Reuse clearly matching assets and update them in place, preserving their IDs, names, folders, and references. Match by name/path and source meaning, not just equal values. Map CSS names naturally, for example `--background` to `background`.
@@ -22,15 +20,11 @@ Recreate the source codebase's reusable design assets as closely as Framer suppo
 - Leave assets without a clear source counterpart unchanged, including template-specific mockup, shadow, and logo styles. Never delete, merge, or rename assets merely to make the libraries match.
 - When a match is ambiguous, leave that item unchanged and report it; continue with clear matches. Read back uncertain write outcomes before retrying so retries do not create duplicates.
 
-
-
 ## Colors
 
 - Sync colors explicitly named by the source codebase in global CSS or its directly referenced token definitions. Resolve dependencies to obtain their values without importing an entire framework palette. Treat utility aliases such as `--color-background: var(--background)` as mappings to the same source role, not additional styles.
 - Preserve each definition's light and dark values, alpha, and color fidelity. Resolve `var(...)`, `color-mix(...)`, and other expressions in the applicable theme and scope using reliable tooling or rendered evidence; do not guess unresolved values or hand-estimate conversions. Avoid reducing wide-gamut colors to hex when Framer can preserve them.
 - Preserve distinct semantic names even when their colors match. Do not invent opacity variants or derive existing values from suffixes alone: `primary-90` must follow its actual definition. If the source is single-theme, use its defined appearance without inventing a second theme; report any intentional destination theme override that would be lost.
-
-
 
 ## Text styles
 
@@ -39,15 +33,11 @@ Recreate the source codebase's reusable design assets as closely as Framer suppo
 - Preserve meaningful units and resolve their context when conversion is necessary. Keep existing Framer names when the roles clearly match; a source size utility such as `text-4xl` alone does not establish a `heading-1` match.
 - Report unsupported fluid sizing or other approximations. Do not invent a new type scale or adjust typography for taste.
 
-
-
 ## Icons
 
 - Identify the source icon family and variants from imports, local SVGs, and shared wrappers. Include used icons and explicit dynamic selections, not the library's entire catalog.
 - Inspect existing Framer sets, exact icon names, and supported controls before adding assets. Reuse matching artwork; otherwise import the exact source SVG as a reusable editable vector when supported.
 - Preserve geometry, fill/stroke treatment, color behavior, dimensions, and stroke scaling. Similar names across libraries are not proof of a match. Report unavailable icons instead of silently substituting another family or a Unicode character.
-
-
 
 ## Verify and report
 

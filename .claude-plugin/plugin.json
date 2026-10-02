@@ -1,7 +1,21 @@
 {
   "name": "darknightdesigner-skills",
+  "version": "0.0.0",
+  "description": "Andres Gonzalez's agent skills, starting with Framer workflows: prompt conversion, style sync, and dashboard mocks.",
+  "author": {
+    "name": "Andres Gonzalez",
+    "url": "https://github.com/darknightdesigner"
+  },
+  "repository": "https://github.com/darknightdesigner/skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "framer",
+    "design"
+  ],
   "skills": [
     "./skills/framer/convert-prompt",
-    "./skills/framer/sync-styles"
+    "./skills/framer/sync-styles",
+    "./skills/framer/create-mock"
   ]
 }

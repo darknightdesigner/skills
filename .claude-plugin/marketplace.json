@@ -1,0 +1,21 @@
+{
+  "name": "darknightdesigner",
+  "owner": {
+    "name": "Andres Gonzalez",
+    "url": "https://github.com/darknightdesigner"
+  },
+  "description": "Andres Gonzalez's agent skills as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "darknightdesigner-skills",
+      "source": "./",
+      "description": "Agent skills for Framer workflows: prompt conversion, style sync, and dashboard mocks.",
+      "category": "design",
+      "keywords": [
+        "skills",
+        "framer",
+        "design"
+      ]
+    }
+  ]
+}
