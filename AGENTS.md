@@ -17,7 +17,7 @@ Non-stable buckets:
 - `in-progress/`
 - `deprecated/`
 
-Every skill directory should contain `SKILL.md`. See `docs/invocation.md` for invocation metadata.
+Every skill directory should contain `SKILL.md` and `agents/openai.yaml` (Codex skill-picker metadata). See `docs/invocation.md` for invocation metadata.
 
 ## Publishing Rules
 
