@@ -35,13 +35,9 @@ claude plugin marketplace add darknightdesigner/skills
 claude plugin install darknightdesigner-skills@darknightdesigner
 ```
 
-Run `npm run link` to install missing stable skills into the canonical local directory:
+For local development, `npm run link` symlinks every skill outside `in-progress/` and `deprecated/` into `~/.agents/skills`, then links `~/.codex/skills`, `~/.claude/skills`, and `~/.cursor/skills` to those entries. Edits in the repo take effect immediately. Re-run it after adding, removing, or renaming a skill.
 
-- `~/.agents/skills`
-
-The script then links the corresponding entries in `~/.codex/skills`, `~/.claude/skills`, and `~/.cursor/skills` back to the canonical `~/.agents/skills` directories. Existing canonical directories are never overwritten implicitly.
-
-Pass explicit host destination directories to `scripts/link-skills.sh` to override the default host link locations.
+The script also picks up a private companion repo cloned next to this one as `skills-private`, or any repo roots listed in `SKILL_SOURCES` (colon-separated). Pass host skill directories as arguments to override the defaults.
 
 Cursor adapters live in `adapters/cursor/` and should be copied or symlinked into a target repo's `.cursor/rules/` directory.
 
