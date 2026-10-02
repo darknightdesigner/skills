@@ -1,0 +1,4 @@
+interface:
+  display_name: "Respond to Code Review"
+  short_description: "Verify PR review feedback, then fix or reply"
+  default_prompt: "Use $respond-code-review to evaluate this PR feedback, fix it if appropriate, and prepare a response."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "New Session"
+  short_description: "Start a main-current branch"
+  default_prompt: "Use $new-session to clean up git worktrees, update main from origin, create and push a clean historically unique Batman-themed branch from freshly verified origin/main, then run the handoff helper until GitHub refs prove the branch is clean, pushed, and not behind main."

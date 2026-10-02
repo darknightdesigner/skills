@@ -9,7 +9,7 @@
     {
       "name": "darknightdesigner-skills",
       "source": "./",
-      "description": "Agent skills for Framer workflows: prompt conversion, style sync, and dashboard mocks.",
+      "description": "Agent skills for engineering workflows (sessions, PRs, code review, React) and Framer (prompt conversion, style sync, dashboard mocks).",
       "category": "design",
       "keywords": [
         "skills",

@@ -43,6 +43,13 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 
 ## Skills
 
+### Engineering
+
+- **[new-session](./skills/engineering/new-session/SKILL.md)** - Create and publish a unique branch from the latest `origin/main`.
+- **[no-use-effect](./skills/engineering/no-use-effect/SKILL.md)** - Replace direct `useEffect` calls with derived state, event handlers, data fetching, `useMountEffect`, or key resets.
+- **[publish-pr](./skills/engineering/publish-pr/SKILL.md)** - Publish a ready-for-review PR and follow through until checks pass and conflicts are resolved.
+- **[respond-code-review](./skills/engineering/respond-code-review/SKILL.md)** - Verify PR review feedback before acting, then fix, propose options, or reply.
+
 ### Framer
 
 - **[convert-prompt](./skills/framer/convert-prompt/SKILL.md)** - Convert code-oriented prompts into copy-paste-ready native Framer prompts.

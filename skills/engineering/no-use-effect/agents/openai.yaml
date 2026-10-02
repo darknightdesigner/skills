@@ -1,0 +1,4 @@
+interface:
+  display_name: "No useEffect"
+  short_description: "Guide safer React effect patterns."
+  default_prompt: "Use $no-use-effect to replace direct useEffect with derived state, event handlers, data-fetching libraries, useMountEffect, or key-based resets in React code."

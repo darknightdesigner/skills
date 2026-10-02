@@ -3,10 +3,22 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Engineering",
+      "description": "Skills for repo sessions, pull requests, code review, and React.",
+      "skills": [
+        "new-session",
+        "no-use-effect",
+        "publish-pr",
+        "respond-code-review"
+      ]
+    },
+    {
       "title": "Framer",
       "description": "Skills for Framer prompt conversion and design workflows.",
       "skills": [
-        "convert-prompt"
+        "convert-prompt",
+        "sync-styles",
+        "create-mock"
       ]
     }
   ]
