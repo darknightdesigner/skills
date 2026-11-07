@@ -8,6 +8,7 @@ Skills are organized under `skills/` by bucket.
 
 Stable skill buckets:
 
+- `design/`
 - `engineering/`
 - `framer/`
 - `productivity/`

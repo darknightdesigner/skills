@@ -22,6 +22,6 @@
     "./skills/framer/convert-prompt",
     "./skills/framer/sync-styles",
     "./skills/framer/create-mock",
-    "./skills/productivity/before-after-video"
+    "./skills/design/before-after-video"
   ]
 }

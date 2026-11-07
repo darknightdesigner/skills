@@ -8,6 +8,7 @@ Agent-facing repo instructions live in `AGENTS.md`. Tool-specific files should s
 
 ## Structure
 
+- `skills/design/` - UI design and motion workflows
 - `skills/engineering/` - code and repo workflows
 - `skills/framer/` - Framer workflows
 - `skills/productivity/` - general workflow tools
@@ -56,6 +57,6 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 - **[sync-styles](./skills/framer/sync-styles/SKILL.md)** - Sync a codebase's named colors, text styles, and used icons into Framer.
 - **[create-mock](./skills/framer/create-mock/SKILL.md)** - Update an existing Framer dashboard mock to match a view in the local app.
 
-### Productivity
+### Design
 
-- **[before-after-video](./skills/productivity/before-after-video/SKILL.md)** - Animate UI changes into a before/after video, refined by an unbiased reviewer loop.
+- **[before-after-video](./skills/design/before-after-video/SKILL.md)** - Animate UI changes into a before/after video, refined by an unbiased reviewer loop.
