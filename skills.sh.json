@@ -20,6 +20,13 @@
         "sync-styles",
         "create-mock"
       ]
+    },
+    {
+      "title": "Productivity",
+      "description": "General workflow skills, including before/after UI videos.",
+      "skills": [
+        "before-after-video"
+      ]
     }
   ]
 }

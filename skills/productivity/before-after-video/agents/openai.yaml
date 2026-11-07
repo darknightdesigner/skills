@@ -1,0 +1,4 @@
+interface:
+  display_name: "Before/After Video"
+  short_description: "Animate UI changes into a reviewed before/after video"
+  default_prompt: "Use $before-after-video to make a before/after video of the UI changes on this branch."

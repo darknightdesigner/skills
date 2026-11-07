@@ -55,3 +55,7 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 - **[convert-prompt](./skills/framer/convert-prompt/SKILL.md)** - Convert code-oriented prompts into copy-paste-ready native Framer prompts.
 - **[sync-styles](./skills/framer/sync-styles/SKILL.md)** - Sync a codebase's named colors, text styles, and used icons into Framer.
 - **[create-mock](./skills/framer/create-mock/SKILL.md)** - Update an existing Framer dashboard mock to match a view in the local app.
+
+### Productivity
+
+- **[before-after-video](./skills/productivity/before-after-video/SKILL.md)** - Animate UI changes into a before/after video, refined by an unbiased reviewer loop.
