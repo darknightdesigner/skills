@@ -7,6 +7,8 @@ description: Create a motion-graphics before/after video of UI changes, built fr
 
 Turn a UI change into a short video that **shows** what changed. The real interface morphs from before to after, with outlines and labels marking the change. Build the first version fast, then let a fresh reviewer push it until it's genuinely impressive.
 
+**Example:** [`examples/flowglad-dashboard-before-after.mp4`](examples/flowglad-dashboard-before-after.mp4) is an approved result (74s, 1440×1080, 60fps) made with this workflow. Before planning, pull a few frames from it to see the quality bar for overlays, camera moves, and pacing. Match its standard, not its content.
+
 ## 1. Scope the story
 
 - Find the before and after states. For a branch, diff against `git merge-base HEAD main`.
@@ -64,6 +66,8 @@ Video: <path>
 What was asked: <the user's request and sequence, in their words>
 Rejected before (must not reappear): <earlier feedback, if any>
 Ground truth: before/after screenshots in <folder>
+Quality bar: <skill folder>/examples/flowglad-dashboard-before-after.mp4 is an
+approved example. The new video should meet or beat its polish.
 
 How to review:
 - Use ffmpeg to extract frames: a 2–4 fps contact sheet for the overall flow,
