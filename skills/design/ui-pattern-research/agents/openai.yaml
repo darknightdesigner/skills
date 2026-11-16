@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Pattern Research"
+  short_description: "Research production UI patterns with Mobbin"
+  default_prompt: "Use $ui-pattern-research to find how production apps implement this UI, then write a pattern brief."

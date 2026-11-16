@@ -1,0 +1,10 @@
+---
+description: Route UI/UX pattern research to the canonical ui-pattern-research skill.
+alwaysApply: false
+---
+
+When the user asks for UI/UX patterns, design references, or how real apps implement a flow (onboarding, checkout, settings, empty states, dashboards, tables), load and follow the canonical skill:
+
+`~/.cursor/skills/ui-pattern-research/SKILL.md`
+
+Search Mobbin, write a pattern brief, and apply it only to the requested gap. Do not invent production examples from memory, and do not restyle a local-app mock to match a reference app.

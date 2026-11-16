@@ -9,7 +9,7 @@
     {
       "name": "darknightdesigner-skills",
       "source": "./",
-      "description": "Agent skills for engineering workflows (sessions, PRs, code review, React), Framer (prompt conversion, style sync, dashboard mocks), and before/after UI videos.",
+      "description": "Agent skills for engineering workflows (sessions, PRs, code review, React), Framer (prompt conversion, style sync, dashboard mocks), UI pattern research, and before/after UI videos.",
       "category": "design",
       "keywords": [
         "skills",
