@@ -40,7 +40,7 @@ Use the Mobbin MCP tools. Prefer `web` for this repo's Framer dashboard work; us
 - Use `mode: "deep"` for screens when the query is a product-type + page-type, not a named app.
 - Cap results (`limit` 6–8 for screens, 3–5 for flows) and read the preview images. Do not describe a screen from metadata alone.
 - Cite every screen you use as a markdown link to its `mobbin_url`. Do not link `image_url` (it expires). If the result includes `ai_usage_notice`, show that text verbatim after the findings.
-- If Mobbin tools are missing or fail, say so and stop. Do not fabricate production examples.
+- If Mobbin tools are missing or fail, say so and stop the research. Do not fabricate production examples. If another skill invoked this research, return to that skill with the gap unfilled.
 
 ### 3. Write a pattern brief
 
