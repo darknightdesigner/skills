@@ -1,7 +1,7 @@
 {
   "name": "darknightdesigner-skills",
   "version": "0.0.0",
-  "description": "Andres Gonzalez's agent skills for engineering workflows (sessions, PRs, code review, React), Framer (prompt conversion, style sync, dashboard mocks), and before/after UI videos.",
+  "description": "Andres Gonzalez's agent skills for engineering workflows (sessions, PRs, code review, React), Framer (prompt conversion, style sync, dashboard mocks), UI pattern research, and before/after UI videos.",
   "author": {
     "name": "Andres Gonzalez",
     "url": "https://github.com/darknightdesigner"
@@ -22,6 +22,7 @@
     "./skills/framer/convert-prompt",
     "./skills/framer/sync-styles",
     "./skills/framer/create-mock",
-    "./skills/design/before-after-video"
+    "./skills/design/before-after-video",
+    "./skills/design/ui-pattern-research"
   ]
 }

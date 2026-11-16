@@ -60,3 +60,4 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 ### Design
 
 - **[before-after-video](./skills/design/before-after-video/SKILL.md)** - Animate UI changes into a before/after video, refined by an unbiased reviewer loop.
+- **[ui-pattern-research](./skills/design/ui-pattern-research/SKILL.md)** - Research production UI with Mobbin and write a pattern brief for mocks and Framer prompts.

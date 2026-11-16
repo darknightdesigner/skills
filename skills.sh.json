@@ -23,9 +23,10 @@
     },
     {
       "title": "Design",
-      "description": "Skills for UI design and motion, including before/after UI videos.",
+      "description": "Skills for UI design and motion, including production UI research and before/after UI videos.",
       "skills": [
-        "before-after-video"
+        "before-after-video",
+        "ui-pattern-research"
       ]
     }
   ]
