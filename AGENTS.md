@@ -11,7 +11,6 @@ Stable skill buckets:
 - `design/`
 - `engineering/`
 - `framer/`
-- `productivity/`
 
 Non-stable buckets:
 

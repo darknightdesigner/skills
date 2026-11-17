@@ -11,7 +11,6 @@ Agent-facing repo instructions live in `AGENTS.md`. Tool-specific files should s
 - `skills/design/` - UI design and motion workflows
 - `skills/engineering/` - code and repo workflows
 - `skills/framer/` - Framer workflows
-- `skills/productivity/` - general workflow tools
 - `skills/in-progress/` - drafts
 - `skills/deprecated/` - retired skills
 
