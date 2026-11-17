@@ -10,7 +10,7 @@
 
 Yooo, my name is Andres Gonzalez (some people call me Batman), and these are the agent skills I use every day to do real design work that lands in the hands of real people.
 
-Designing used to be something that lived on a canvas. Not anymore. More designers are becoming builders who don't just blueprint their ideas, they bring them to life too. These skills are meant to help designers do exactly that.
+Design used to be something that lived on the canvas somewhere buried in a forgotten Figma file. Not anymore. More designers are becoming builders who don't stop at a blueprint or an idea... They bring those ideas to life. They ship. These skills are meant to help the next generation of designers become builders, founders, and creators.
 
 If you want to keep up with updates and hear when I launch new skills, join the newsletter:
 
