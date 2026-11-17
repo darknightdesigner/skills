@@ -1,24 +1,20 @@
-# Skills
+<p>
+  <a href="https://andres-newsletter-df20db.beehiiv.com/subscribe">
+    <img alt="Andres Gonzalez" src="https://github.com/darknightdesigner.png?size=240" width="120">
+  </a>
+</p>
+
+# Skills For Designers Who Ship
 
 [![skills.sh](https://skills.sh/b/darknightdesigner/skills)](https://skills.sh/darknightdesigner/skills)
 
-Minimal agent skills repo.
+Yooo, my name is Andres Gonzalez (some people call me Batman), and these are the agent skills I use every day to do real design work that lands in the hands of real people.
 
-Agent-facing repo instructions live in `AGENTS.md`. Tool-specific files should stay thin and point back to that source of truth.
+Designing used to be something that lived on a canvas. Not anymore. More designers are becoming builders who don't just blueprint their ideas, they bring them to life too. These skills are meant to help designers do exactly that.
 
-## Structure
+If you want to keep up with updates and hear when I launch new skills, join the newsletter:
 
-- `skills/design/` - UI design and motion workflows
-- `skills/engineering/` - code and repo workflows
-- `skills/framer/` - Framer workflows
-- `skills/in-progress/` - drafts
-- `skills/deprecated/` - retired skills
-
-## Adding a Skill
-
-Create `skills/<bucket>/<skill-name>/SKILL.md`, then add stable skills to `.claude-plugin/plugin.json`.
-
-User-invoked skills set `disable-model-invocation: true`. Model-invoked skills omit it and use trigger-focused descriptions.
+[Sign Up To The Newsletter](https://andres-newsletter-df20db.beehiiv.com/subscribe)
 
 ## Install Locally
 
@@ -59,3 +55,17 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 ### Design
 
 - **[before-after-video](./skills/design/before-after-video/SKILL.md)** - Animate UI changes into a before/after video, refined by an unbiased reviewer loop.
+
+## Structure
+
+- `skills/design/` - UI design and motion workflows
+- `skills/engineering/` - code and repo workflows
+- `skills/framer/` - Framer workflows
+- `skills/in-progress/` - drafts
+- `skills/deprecated/` - retired skills
+
+## Adding a Skill
+
+Create `skills/<bucket>/<skill-name>/SKILL.md`, then add stable skills to `.claude-plugin/plugin.json`.
+
+User-invoked skills set `disable-model-invocation: true`. Model-invoked skills omit it and use trigger-focused descriptions.
