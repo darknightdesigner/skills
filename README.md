@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Skills For Designers Who Ship
+# skills for designers who ship
 
 [![skills.sh](https://skills.sh/b/darknightdesigner/skills)](https://skills.sh/darknightdesigner/skills)
 
@@ -18,7 +18,7 @@ If you want to keep up with updates and new skills, join the newsletter:
 
 [Sign Up to the Newsletter](https://andres-newsletter-df20db.beehiiv.com/subscribe)
 
-## Install Locally
+## install locally
 
 Install the stable skill set through the Skills CLI:
 
@@ -39,26 +39,26 @@ The script also picks up a private companion repo cloned next to this one as `sk
 
 Cursor adapters live in `adapters/cursor/` and should be copied or symlinked into a target repo's `.cursor/rules/` directory.
 
-## Skills
+## skills
 
-### Engineering
+### engineering
 
 - **[new-session](./skills/engineering/new-session/SKILL.md)** - Create and publish a unique branch from the latest `origin/main`.
 - **[no-use-effect](./skills/engineering/no-use-effect/SKILL.md)** - Replace direct `useEffect` calls with derived state, event handlers, data fetching, `useMountEffect`, or key resets.
 - **[publish-pr](./skills/engineering/publish-pr/SKILL.md)** - Publish a ready-for-review PR and follow through until checks pass and conflicts are resolved.
 - **[respond-code-review](./skills/engineering/respond-code-review/SKILL.md)** - Verify PR review feedback before acting, then fix, propose options, or reply.
 
-### Framer
+### framer
 
 - **[convert-prompt](./skills/framer/convert-prompt/SKILL.md)** - Convert code-oriented prompts into copy-paste-ready native Framer prompts.
 - **[sync-styles](./skills/framer/sync-styles/SKILL.md)** - Sync a codebase's named colors, text styles, and used icons into Framer.
 - **[create-mock](./skills/framer/create-mock/SKILL.md)** - Update an existing Framer dashboard mock to match a view in the local app.
 
-### Design
+### design
 
 - **[before-after-video](./skills/design/before-after-video/SKILL.md)** - Animate UI changes into a before/after video, refined by an unbiased reviewer loop.
 
-## Structure
+## structure
 
 - `skills/design/` - UI design and motion workflows
 - `skills/engineering/` - code and repo workflows
@@ -66,7 +66,7 @@ Cursor adapters live in `adapters/cursor/` and should be copied or symlinked int
 - `skills/in-progress/` - drafts
 - `skills/deprecated/` - retired skills
 
-## Adding a Skill
+## adding a skill
 
 Create `skills/<bucket>/<skill-name>/SKILL.md`, then add stable skills to `.claude-plugin/plugin.json`.
 
