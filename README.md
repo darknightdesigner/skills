@@ -8,7 +8,7 @@
 
 [![skills.sh](https://skills.sh/b/darknightdesigner/skills)](https://skills.sh/darknightdesigner/skills)
 
-Design used to be something that lived somewhere buried in a forgotten Figma file.
+Design used to be something that lived somewhere buried in a forgotten Figma file, disconnected from the codebase and real users.
 
 Not anymore.
 
